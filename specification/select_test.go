@@ -28,9 +28,9 @@ import (
 // 步骤5
 // The statement list of the selected case is executed.
 
-// TODO: 第一步没理解
 // select仅能针对channel操作，步骤
-// 第一步：执行所有的case语句中接收channel的数据、channel、以及发送数据到channel，这一步按照代码顺序偶从上到下的定义顺序。
+// 第一步：执行所有的case语句中有接收符号的channel（<-recvChannel）或者右值表达式（someVariable = <-recvChannel），仅仅执行一次。
+// 这一步按照代码顺序偶从上到下的定义顺序。
 // 结果就是从channel中获取到或者发送数据的数据，
 // 第二步：如果一个或多个通信可以被执行，通过统一伪随机算法选取一个可执行case；否则运行默认的case。
 // 如果没有default case，则select会阻塞直到有一个能执行。
