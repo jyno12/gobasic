@@ -1,0 +1,2 @@
+# gobasic
+golang concept test
